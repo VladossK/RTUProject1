@@ -119,6 +119,8 @@ def main():
             app = " ".join(temp)
             groza.append(app)
         choose_yn = input('Vai vēlaties pievienot vēl? (y/n) ').lower()
+        while choose_yn != 'y' and choose_yn != 'n': # validation
+                choose_yn = input('Ievadiet vēlreiz (y/n): ').lower() 
 
     e_mail = input('Lūdzu, ievadiet e-pasta adresi, kur nosutīt piezīmi: ')
     data = input('Kurā datumā vēlaties apmeklēt veikalu? ')
