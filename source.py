@@ -91,7 +91,7 @@ def send_email(pirkumi,date,mail,full_price):
             # Authentication
             s.login("remindermr9@gmail.com", "vevv yivi hptn qigq")
             # message to be sent
-            message = MIMEText('Šis dienas pirkumi: \n\n'+"\n".join(pirkumi) + f"\n\n             Pilna cena: {full_price:.2f}€")
+            message = MIMEText('Šis dienas pirkumi: \n\n'+"\n".join(pirkumi) + f"\n\n\t\tPilna cena: {full_price:.2f}€")
             message["Subject"] = f'Veikala apmeklējums {date}'
             # sending the mail
             s.sendmail("remindermr9@gmail.com", mail, message.as_string())
@@ -118,7 +118,7 @@ def main():
             count += full_price
             app = " ".join(temp)
             groza.append(app)
-        choose_yn = input('Vai vēlaties pievienot vēl? (y/n) ')
+        choose_yn = input('Vai vēlaties pievienot vēl? (y/n) ').lower()
 
     e_mail = input('Lūdzu, ievadiet e-pasta adresi, kur nosutīt piezīmi: ')
     data = input('Kurā datumā vēlaties apmeklēt veikalu? ')
